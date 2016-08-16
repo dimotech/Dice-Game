@@ -1,0 +1,62 @@
+body {
+    text-align: center;
+}
+.dice {
+    margin: 0px;
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;
+    display: inline-block;
+}
+#dice1 {
+    background-color: #ff0000;
+}
+#dice2 {
+    background-color: #ff6d00;
+}
+#dice3 {
+    background-color: #ffd700;
+}
+#dice4 {
+    background-color: #4dc061;
+}
+#dice5 {
+    background-color: #3399ff;
+}
+#dice6 {
+    background-color: #8470ff;
+}
+.pointDiv {
+    padding: 20px;
+    height: 20px;
+    width: 20px;
+    float: left;
+}
+.point {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+}
+#dice1.point {
+    background-color: #ff0000;
+}
+#dice2.point {
+    background-color: #ff6d00;
+}
+#dice3.point {
+    background-color: #ffd700;
+}
+#dice4.point {
+    background-color: #4dc061;
+}
+#dice5.point {
+    background-color: #3399ff;
+}
+#dice6.point {
+    background-color: #8470ff;
+}
+#screen {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+}
