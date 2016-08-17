@@ -1,22 +1,5 @@
 var autoRollRound;
-window.onload=function(){
-    setInputMin();
-    setInputMax();
-    function setInputMin() {
-        var value = getSelectedValue();
-        var minValue = 1 * parseInt(value);
-        document.getElementById("target").min = parseInt(minValue);
-    }
-
-    function setInputMax() {
-        var value = getSelectedValue();
-        var maxValue = 6 * parseInt(value);
-        document.getElementById("target").max = parseInt(maxValue);
-    }    
-}
 function changeDice() {
-    // setInputMin();
-    // setInputMax();
     var total = 0;
     var value = getSelectedValue();
     for (var i = 1; i <= value; i++) {
@@ -78,6 +61,8 @@ function showDice(index, diceNumber) {
 }
 
 function toggle(el) {
+    setInputMin();
+    setInputMax();
     var value = getSelectedValue();
     for (var i = 1; i <= 6; i++) {
         if (i < parseInt(value) + 1) {
@@ -122,4 +107,24 @@ function start() {
 
 function stop() {
     autoRollRound.terminate();
+}
+
+function setInputMin() {
+    var value = getSelectedValue();
+    var minValue = 1 * parseInt(value);
+    document.getElementById("target").min = parseInt(minValue);
+}
+
+function setInputMax() {
+    var value = getSelectedValue();
+    var maxValue = 6 * parseInt(value);
+    document.getElementById("target").max = parseInt(maxValue);
+}  
+
+function checkFixedTotalSet() {
+    var value = document.getElementById("target").value;
+    if (value == null) {
+        return false;
+    }
+    return true;
 }
