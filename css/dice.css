@@ -55,8 +55,21 @@ body {
 #dice6.point {
     background-color: #8470ff;
 }
+#target {
+    width: 150px;
+}
 #screen {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bolder;
+}
+#total {
+    height: 50px;
+    width: 50px;
+    line-height: 55px;
+    vertical-align: center;
+    color: white;
+    border-radius: 10px;
+    background-color: gray;
+    margin: auto;
 }

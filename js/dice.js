@@ -1,4 +1,22 @@
+var autoRollRound;
+window.onload=function(){
+    setInputMin();
+    setInputMax();
+    function setInputMin() {
+        var value = getSelectedValue();
+        var minValue = 1 * parseInt(value);
+        document.getElementById("target").min = parseInt(minValue);
+    }
+
+    function setInputMax() {
+        var value = getSelectedValue();
+        var maxValue = 6 * parseInt(value);
+        document.getElementById("target").max = parseInt(maxValue);
+    }    
+}
 function changeDice() {
+    // setInputMin();
+    // setInputMax();
     var total = 0;
     var value = getSelectedValue();
     for (var i = 1; i <= value; i++) {
@@ -78,5 +96,30 @@ function getSelectedValue() {
 }
 
 function printTotal(num) {
-   document.getElementById("screen").innerHTML = num;
+    document.getElementById("total").innerHTML = num;
+}
+
+function autoRoll() {
+    var autoRoll;
+    this.roll = function() {
+        autoRoll = setInterval(function(){
+            document.getElementById("generate").click();
+        }, 100);
+        document.getElementById('autoRoll').disabled = true;
+        document.getElementById('fireAutoRoll').disabled = false;    
+    }
+    this.terminate = function() {
+        clearInterval(autoRoll);
+        document.getElementById('autoRoll').disabled = false;
+        document.getElementById('fireAutoRoll').disabled = true;           
+    }
+}
+
+function start() {
+    autoRollRound= new autoRoll;
+    autoRollRound.roll();
+}
+
+function stop() {
+    autoRollRound.terminate();
 }
