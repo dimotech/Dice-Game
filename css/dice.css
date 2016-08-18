@@ -66,10 +66,16 @@ body {
 #total {
     height: 50px;
     width: 50px;
-    line-height: 55px;
+    line-height: 50px;
     vertical-align: center;
     color: white;
     border-radius: 10px;
     background-color: gray;
     margin: auto;
+}
+#rollRounds {
+    height: 50px;
+    line-height: 50px;
+    vertical-align: center;
+    color: gray;
 }

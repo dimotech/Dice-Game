@@ -1,4 +1,5 @@
 var autoRollRound;
+var countRollRounds = 0;
 function changeDice() {
     var total = 0;
     var value = getSelectedValue();
@@ -34,6 +35,11 @@ function changeDice() {
         }
     }
     printTotal(total);
+    countRollRoundsTotal();
+    var judgement = checkFixedTotalSet();
+    if (judgement) {
+        checkEqualFixedTotal(total);
+    }
 }
 
 function clear(index) {
@@ -107,6 +113,7 @@ function start() {
 
 function stop() {
     autoRollRound.terminate();
+    countRollRounds = 0;
 }
 
 function setInputMin() {
@@ -127,4 +134,17 @@ function checkFixedTotalSet() {
         return false;
     }
     return true;
+}
+
+function checkEqualFixedTotal(number) {
+    var value = document.getElementById("target").value;
+    if (value == number) {
+        document.getElementById("fireAutoRoll").click();
+    }
+}
+
+function countRollRoundsTotal() {
+    countRollRounds++;
+    var message = countRollRounds + " Rounds";
+    document.getElementById("rollRounds").innerHTML = message;
 }
