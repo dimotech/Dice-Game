@@ -1,6 +1,26 @@
 body {
     text-align: center;
 }
+h1 {
+    font-weight: bolder;
+    text-align: center;
+}
+@keyframes blink {
+    0% { color:#ff0000; }
+    10% { color: #ff6d00; }
+    20% { color: #ffd700; }
+    30% { color: #4dc061; }
+    40% { color: #3399ff; }
+    50% { color: #8470ff; }
+    60% { color: #3399ff; }
+    70% { color: #4dc061; }
+    80% { color: #ffd700; } 
+    90% { color: #ff6d00; }  
+    100% { color:#ff0000; }             
+} 
+.blink {
+     animation: blink 8s linear infinite;
+}
 .dice {
     margin: 0px;
     height: 180px;
